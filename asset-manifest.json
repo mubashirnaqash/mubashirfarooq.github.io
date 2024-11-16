@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mubashirfarooq.github.io/static/css/main.ef13d92d.css",
+    "main.js": "/mubashirfarooq.github.io/static/js/main.37ab053b.js",
+    "static/js/453.253ccfac.chunk.js": "/mubashirfarooq.github.io/static/js/453.253ccfac.chunk.js",
+    "index.html": "/mubashirfarooq.github.io/index.html",
+    "main.ef13d92d.css.map": "/mubashirfarooq.github.io/static/css/main.ef13d92d.css.map",
+    "main.37ab053b.js.map": "/mubashirfarooq.github.io/static/js/main.37ab053b.js.map",
+    "453.253ccfac.chunk.js.map": "/mubashirfarooq.github.io/static/js/453.253ccfac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef13d92d.css",
+    "static/js/main.37ab053b.js"
+  ]
+}
