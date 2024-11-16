@@ -1,38 +1,26 @@
 import React from 'react';
 
-type StarSize = 'sm' | 'md' | 'lg';
-
 interface StarProps {
-  size?: StarSize;
-  className?: string;
+  size?: number;
+  color?: string;
+  style?: React.CSSProperties;
 }
 
-const Star: React.FC<StarProps> = ({ size = 'sm', className = '' }) => {
-  const sizeClasses = {
-    sm: 'w-2 h-2',
-    md: 'w-3 h-3',
-    lg: 'w-4 h-4'
-  };
-
-  return (
-    <div className={`${sizeClasses[size]} ${className}`}>
-      <svg viewBox="0 0 51 48" fill="currentColor">
-        <path d="M25.5 0L31.5 16.5H49.5L35 27L40.5 44L25.5 34.5L10.5 44L16 27L1.5 16.5H19.5L25.5 0Z" />
-      </svg>
-    </div>
-  );
-};
+const Star: React.FC<StarProps> = ({ size = 2, color = '#FFF', style }) => (
+  <div
+    style={{
+      width: size,
+      height: size,
+      backgroundColor: color,
+      borderRadius: '50%',
+      ...style,
+    }}
+  />
+);
 
 interface BackgroundStarsProps {
   density?: 'low' | 'medium' | 'high';
   className?: string;
-}
-
-interface StarConfig {
-  top: string;
-  left: string;
-  color: string;
-  size: StarSize;
 }
 
 const BackgroundStars: React.FC<BackgroundStarsProps> = ({ 
@@ -40,7 +28,6 @@ const BackgroundStars: React.FC<BackgroundStarsProps> = ({
   className = ''
 }) => {
   const stars = React.useMemo(() => {
-    // Move constants inside useMemo
     const starCounts = {
       low: 50,
       medium: 100,
@@ -62,9 +49,9 @@ const BackgroundStars: React.FC<BackgroundStarsProps> = ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       color: starColors[Math.floor(Math.random() * starColors.length)],
-      size: (Math.random() > 0.8 ? 'lg' : Math.random() > 0.6 ? 'md' : 'sm') as StarSize
+      size: Math.random() > 0.8 ? 4 : Math.random() > 0.6 ? 3 : 2
     }));
-  }, [density]); // Only density as dependency
+  }, [density]);
 
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
@@ -79,7 +66,8 @@ const BackgroundStars: React.FC<BackgroundStarsProps> = ({
         >
           <Star 
             size={star.size}
-            className={`${star.color} opacity-40`}
+            style={{ opacity: 0.4 }}
+            className={star.color}
           />
         </div>
       ))}
