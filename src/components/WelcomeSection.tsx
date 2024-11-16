@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiOutlineDevicePhoneMobile, HiOutlineComputerDesktop, HiOutlineDeviceTablet } from 'react-icons/hi2';
-import { PiLaptopThin } from 'react-icons/pi';
+import { HiOutlineComputerDesktop, HiOutlineDevicePhoneMobile, PiLaptopThin, HiOutlineDeviceTablet } from 'react-icons/hi2';
 import { FaBrain, FaNetworkWired, FaRobot, FaMicrochip } from 'react-icons/fa';
 import { SiTensorflow, SiPytorch, SiScikitlearn } from 'react-icons/si';
 import { BsGraphUp, BsLightningChargeFill } from 'react-icons/bs';

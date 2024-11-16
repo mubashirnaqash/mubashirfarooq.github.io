@@ -1,69 +1,52 @@
-import React, { useEffect, useState } from 'react';
-// @ts-ignore
+import React, { useEffect, useCallback } from 'react';
 import confetti from 'canvas-confetti';
 
 interface PartyPopperProps {
-  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   interval?: number;
-  size?: 'small' | 'normal';
+  size?: 'small' | 'medium' | 'large';
 }
 
 const PartyPopper: React.FC<PartyPopperProps> = ({ 
-  position = 'top-right',
-  interval = 2000,
-  size = 'normal'
+  position, 
+  interval = 3000,
+  size = 'medium'
 }) => {
-  const [isActive, setIsActive] = useState(true);
+  const fire = useCallback(() => {
+    const count = size === 'small' ? 30 : size === 'medium' ? 50 : 70;
+    const spread = size === 'small' ? 50 : size === 'medium' ? 70 : 90;
+    const startVelocity = size === 'small' ? 15 : size === 'medium' ? 25 : 35;
 
-  const getOrigin = () => {
+    let origin = { x: 0, y: 0 };
     switch (position) {
       case 'top-left':
-        return { x: 0.1, y: 0.1 };
+        origin = { x: 0, y: 0 };
+        break;
       case 'top-right':
-        return { x: 0.9, y: 0.1 };
+        origin = { x: 1, y: 0 };
+        break;
       case 'bottom-left':
-        return { x: 0.1, y: 0.9 };
+        origin = { x: 0, y: 1 };
+        break;
       case 'bottom-right':
-        return { x: 0.9, y: 0.9 };
-      default:
-        return { x: 0.5, y: 0.5 };
+        origin = { x: 1, y: 1 };
+        break;
     }
-  };
 
-  const getConfig = () => {
-    const isSmall = size === 'small';
-    return {
-      particleCount: isSmall ? 15 : 30,
-      spread: isSmall ? 30 : 40,
-      scalar: isSmall ? 0.3 : 0.5,
-      startVelocity: isSmall ? 15 : 20,
-      gravity: isSmall ? 0.6 : 0.8,
-      ticks: isSmall ? 150 : 200,
-      decay: isSmall ? 0.9 : 0.95,
-    };
-  };
-
-  const fire = () => {
-    try {
-      const origin = getOrigin();
-      const config = getConfig();
-      confetti({
-        ...config,
-        origin,
-        zIndex: 1000,
-        colors: ['#4F46E5', '#7C3AED', '#EC4899', '#38BDF8', '#34D399'],
-      });
-    } catch (error) {
-      console.error('Error firing confetti:', error);
-    }
-  };
+    confetti({
+      particleCount: count,
+      spread: spread,
+      startVelocity: startVelocity,
+      origin,
+      colors: ['#4F46E5', '#7C3AED', '#EC4899'],
+      zIndex: 1000,
+    });
+  }, [position, size]);
 
   useEffect(() => {
-    if (!isActive) return;
-
-    const timer = setInterval(fire, interval);
-    return () => clearInterval(timer);
-  }, [interval, isActive]);
+    const intervalId = setInterval(fire, interval);
+    return () => clearInterval(intervalId);
+  }, [fire, interval]);
 
   return null;
 };

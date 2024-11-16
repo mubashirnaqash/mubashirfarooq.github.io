@@ -64,7 +64,7 @@ const BackgroundStars: React.FC<BackgroundStarsProps> = ({
       color: starColors[Math.floor(Math.random() * starColors.length)],
       size: Math.random() > 0.8 ? 'md' : Math.random() > 0.6 ? 'sm' : 'sm'
     }));
-  }, [density]);
+  }, [density, starCounts, starColors]); // Dependencies added here
 
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>

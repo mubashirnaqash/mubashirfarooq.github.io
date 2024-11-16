@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 // @ts-ignore
 import confetti from 'canvas-confetti';
@@ -34,7 +34,7 @@ const Fireworks = () => {
     });
   };
 
-  const fireConfetti = () => {
+  const fireConfetti = useCallback(() => {
     try {
       const defaults = {
         origin: { y: 0.9 },
@@ -77,7 +77,7 @@ const Fireworks = () => {
     } catch (error) {
       console.error('Error firing confetti:', error);
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (!isActive) return;
@@ -119,7 +119,7 @@ const Fireworks = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isActive]);
+  }, [isActive, fireConfetti]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-50">

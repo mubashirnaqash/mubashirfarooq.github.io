@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { 
@@ -23,7 +23,6 @@ function App() {
   const [currentSection, setCurrentSection] = useState('welcome');
   const [showFireworks, setShowFireworks] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const hasShownFireworks = useRef(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode);
