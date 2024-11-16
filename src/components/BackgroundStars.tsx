@@ -62,7 +62,7 @@ const BackgroundStars: React.FC<BackgroundStarsProps> = ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       color: starColors[Math.floor(Math.random() * starColors.length)],
-      size: Math.random() > 0.8 ? 'md' : Math.random() > 0.6 ? 'sm' : 'sm'
+      size: (Math.random() > 0.8 ? 'lg' : Math.random() > 0.6 ? 'md' : 'sm') as StarSize
     }));
   }, [density]); // Only density as dependency
 
@@ -78,7 +78,7 @@ const BackgroundStars: React.FC<BackgroundStarsProps> = ({
           }}
         >
           <Star 
-            size={star.size} 
+            size={star.size}
             className={`${star.color} opacity-40`}
           />
         </div>
