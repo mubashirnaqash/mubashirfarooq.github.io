@@ -39,32 +39,32 @@ const BackgroundStars: React.FC<BackgroundStarsProps> = ({
   density = 'medium',
   className = ''
 }) => {
-  const starCounts = {
-    low: 50,
-    medium: 100,
-    high: 150
-  };
+  const stars = React.useMemo(() => {
+    // Move constants inside useMemo
+    const starCounts = {
+      low: 50,
+      medium: 100,
+      high: 150
+    };
 
-  const starColors = [
-    'text-blue-200', // Sirius (blue-white)
-    'text-yellow-200', // Sun-like
-    'text-orange-300', // Betelgeuse (orange)
-    'text-red-300', // Antares (red)
-    'text-indigo-200', // Rigel (blue)
-    'text-white', // White dwarf
-    'text-purple-200', // Purple star
-    'text-pink-200', // Pink star
-  ];
+    const starColors = [
+      'text-blue-200',   // Sirius (blue-white)
+      'text-yellow-200', // Sun-like
+      'text-orange-300', // Betelgeuse (orange)
+      'text-red-300',    // Antares (red)
+      'text-indigo-200', // Rigel (blue)
+      'text-white',      // White dwarf
+      'text-purple-200', // Purple star
+      'text-pink-200',   // Pink star
+    ];
 
-  // Generate random positions once
-  const stars = React.useMemo<StarConfig[]>(() => {
     return [...Array(starCounts[density])].map(() => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       color: starColors[Math.floor(Math.random() * starColors.length)],
       size: Math.random() > 0.8 ? 'md' : Math.random() > 0.6 ? 'sm' : 'sm'
     }));
-  }, [density, starCounts, starColors]); // Dependencies added here
+  }, [density]); // Only density as dependency
 
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>

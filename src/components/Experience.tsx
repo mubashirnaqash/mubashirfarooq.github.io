@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode } from 'react-icons/fa';
+import { FaCode, FaGraduationCap, FaMedal, FaHeart, FaCamera, FaChess, FaMusic, FaLaptopCode, FaChalkboardTeacher, FaAward, FaBook } from 'react-icons/fa';
 import { BsCalendarEvent, BsGeoAlt } from 'react-icons/bs';
 import { SiGooglescholar } from 'react-icons/si';
 import { GiTeacher, GiCricketBat, GiMountainClimbing } from 'react-icons/gi';
 import { IoFootball } from 'react-icons/io5';
-import { FaBriefcase, FaGraduationCap, FaMedal, FaHeart, FaCamera, FaChess, FaMusic, FaLaptopCode, FaChalkboardTeacher, FaAward, FaBook, FaBuilding } from 'react-icons/fa';
 
 const Experience = () => {
   const experiences = [

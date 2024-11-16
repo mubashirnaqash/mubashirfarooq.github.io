@@ -1,13 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiOutlineComputerDesktop, HiOutlineDevicePhoneMobile, HiOutlineDeviceTablet } from 'react-icons/hi2';
-import { PiLaptopThin } from 'react-icons/pi';
-import { FaBrain, FaNetworkWired, FaRobot, FaMicrochip } from 'react-icons/fa';
-import { SiTensorflow, SiPytorch, SiScikitlearn } from 'react-icons/si';
-import { BsGraphUp, BsLightningChargeFill } from 'react-icons/bs';
-import { GiArtificialIntelligence, GiBrain, GiArtificialHive } from 'react-icons/gi';
+import { Link } from 'react-scroll';
+import { FaChevronDown } from 'react-icons/fa';
+import { HeadlineStars } from './BackgroundStars';
+import ProfilePhoto from './ProfilePhoto';
 
-// Background animation variants
 const backgroundVariants = {
   animate: {
     background: [
