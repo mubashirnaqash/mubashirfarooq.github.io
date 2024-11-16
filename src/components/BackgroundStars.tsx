@@ -4,9 +4,10 @@ interface StarProps {
   size?: number;
   color?: string;
   style?: React.CSSProperties;
+  className?: string;
 }
 
-const Star: React.FC<StarProps> = ({ size = 2, color = '#FFF', style }) => (
+const Star: React.FC<StarProps> = ({ size = 2, color = '#FFF', style, className }) => (
   <div
     style={{
       width: size,
@@ -15,6 +16,7 @@ const Star: React.FC<StarProps> = ({ size = 2, color = '#FFF', style }) => (
       borderRadius: '50%',
       ...style,
     }}
+    className={className}
   />
 );
 
