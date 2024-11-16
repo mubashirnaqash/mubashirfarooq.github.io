@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBrain, FaBook, FaHospital, FaNetworkWired, FaMicroscope, FaChartLine } from 'react-icons/fa';
 import { BiCodeAlt } from 'react-icons/bi';
