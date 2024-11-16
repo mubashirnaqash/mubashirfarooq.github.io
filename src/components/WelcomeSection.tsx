@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaRobot, FaNetworkWired, FaMicrochip } from 'react-icons/fa';
+import { HiOutlineComputerDesktop, HiOutlineDevicePhoneMobile, HiOutlineDeviceTablet } from 'react-icons/hi2';
+import { PiLaptopThin } from 'react-icons/pi';
+import { GiArtificialHive, GiArtificialIntelligence, GiBrain } from 'react-icons/gi';
+import { SiTensorflow, SiPytorch, SiScikitlearn } from 'react-icons/si';
+import { BsGraphUp, BsLightningChargeFill } from 'react-icons/bs';
 import { HeadlineStars } from './BackgroundStars';
 import ProfilePhoto from './ProfilePhoto';
 
@@ -61,21 +66,21 @@ const floatingAnimation = {
 };
 
 const techIcons = [
-    { Icon: HiOutlineComputerDesktop, color: "text-blue-500", delay: 0, scale: 2.5 },
-    { Icon: HiOutlineDevicePhoneMobile, color: "text-purple-500", delay: 0.1, scale: 2.5 },
-    { Icon: PiLaptopThin, color: "text-pink-500", delay: 0.2, scale: 2.5 },
-    { Icon: HiOutlineDeviceTablet, color: "text-indigo-500", delay: 0.3, scale: 2.5 },
-    { Icon: GiArtificialHive, color: "text-blue-400", delay: 0.4, scale: 2 },
-    { Icon: FaRobot, color: "text-purple-400", delay: 0.5, scale: 2 },
-    { Icon: SiTensorflow, color: "text-orange-500", delay: 0.6, scale: 2 },
-    { Icon: SiPytorch, color: "text-red-500", delay: 0.7, scale: 2 },
-    { Icon: GiArtificialIntelligence, color: "text-green-500", delay: 0.8, scale: 2 },
-    { Icon: FaNetworkWired, color: "text-yellow-500", delay: 0.9, scale: 2 },
-    { Icon: BsGraphUp, color: "text-cyan-500", delay: 1, scale: 2 },
-    { Icon: FaMicrochip, color: "text-pink-400", delay: 1.1, scale: 2 },
-    { Icon: SiScikitlearn, color: "text-orange-400", delay: 1.2, scale: 2 },
-    { Icon: GiBrain, color: "text-purple-300", delay: 1.3, scale: 2 },
-    { Icon: BsLightningChargeFill, color: "text-yellow-300", delay: 1.4, scale: 2 },
+  { Icon: HiOutlineComputerDesktop, color: "text-blue-500", delay: 0, scale: 2.5 },
+  { Icon: HiOutlineDevicePhoneMobile, color: "text-purple-500", delay: 0.1, scale: 2.5 },
+  { Icon: PiLaptopThin, color: "text-pink-500", delay: 0.2, scale: 2.5 },
+  { Icon: HiOutlineDeviceTablet, color: "text-indigo-500", delay: 0.3, scale: 2.5 },
+  { Icon: GiArtificialHive, color: "text-blue-400", delay: 0.4, scale: 2 },
+  { Icon: FaRobot, color: "text-purple-400", delay: 0.5, scale: 2 },
+  { Icon: SiTensorflow, color: "text-orange-500", delay: 0.6, scale: 2 },
+  { Icon: SiPytorch, color: "text-red-500", delay: 0.7, scale: 2 },
+  { Icon: GiArtificialIntelligence, color: "text-green-500", delay: 0.8, scale: 2 },
+  { Icon: FaNetworkWired, color: "text-yellow-500", delay: 0.9, scale: 2 },
+  { Icon: BsGraphUp, color: "text-cyan-500", delay: 1, scale: 2 },
+  { Icon: FaMicrochip, color: "text-pink-400", delay: 1.1, scale: 2 },
+  { Icon: SiScikitlearn, color: "text-orange-400", delay: 1.2, scale: 2 },
+  { Icon: GiBrain, color: "text-purple-300", delay: 1.3, scale: 2 },
+  { Icon: BsLightningChargeFill, color: "text-yellow-300", delay: 1.4, scale: 2 },
 ];
 
 const quotes = [
