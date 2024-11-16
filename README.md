@@ -29,7 +29,7 @@ Welcome to my personal portfolio website! This modern, responsive site showcases
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mubashirnaqash/mubashirnaqash.github.io.git
+   git clone https://github.com/mubashirnaqash/mubashirfarooq.github.io.git
    ```
 
 2. Install dependencies:
@@ -46,7 +46,7 @@ Welcome to my personal portfolio website! This modern, responsive site showcases
 
 ## 🚀 Deployment
 
-The site is deployed using GitHub Pages and can be accessed at [https://mubashirnaqash.github.io](https://mubashirnaqash.github.io)
+The site is deployed using GitHub Pages and can be accessed at [https://mubashirfarooq.github.io](https://mubashirfarooq.github.io)
 
 To deploy new changes:
 ```bash
