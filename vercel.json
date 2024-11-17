@@ -1,18 +1,26 @@
 {
   "version": 2,
-  "buildCommand": "chmod +x build.sh && ./build.sh",
-  "installCommand": "yarn install",
-  "framework": null,
-  "outputDirectory": "build",
-  "public": true,
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "alias": ["mubashirfarooq.vercel.app"],
-  "redirects": [
+  "builds": [
     {
-      "source": "https://mubashirfarooq-github-rha2pwlzw-mubashirnaqashs-projects.vercel.app/*",
-      "destination": "https://mubashirfarooq.vercel.app/:splat",
-      "permanent": true
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "CI": "false",
+    "NODE_ENV": "production"
+  }
 }

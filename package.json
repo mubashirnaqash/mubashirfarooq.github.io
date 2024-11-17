@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://mubashirfarooq.vercel.app",
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.22.0"
+  },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.17.0",
@@ -26,8 +30,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "./build.sh",
-    "winbuild": "build.cmd",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
