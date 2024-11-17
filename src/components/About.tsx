@@ -11,7 +11,7 @@ import {
   SiPython, SiTensorflow, SiScikitlearn, SiPytorch, SiOpencv, SiOpenai, 
   SiJavascript, SiCplusplus, SiMysql, SiReact, SiNodedotjs, SiMongodb, SiGit, 
   SiNumpy, SiPandas, SiSpring, SiHibernate, SiGradle, SiCmake, SiPostgresql, 
-  SiSqlite, SiTypescript, SiExpress, SiHuggingface, SiGooglescholar
+  SiSqlite, SiTypescript, SiExpress, SiGooglescholar
 } from 'react-icons/si';
 import { BsLightningChargeFill, BsGraphUp } from 'react-icons/bs';
 import { BiBrain, BiNetworkChart } from 'react-icons/bi';
@@ -1108,7 +1108,6 @@ const MLSprinkles = ({ isVisible }: { isVisible: boolean }) => {
     { Icon: SiPytorch, color: "text-[#EE4C2C]", label: "PyTorch", category: "core" },
     { Icon: SiScikitlearn, color: "text-[#F7931E]", label: "Scikit-learn", category: "core" },
     { Icon: SiOpenai, color: "text-[#00A67E]", label: "OpenAI", category: "nlp" },
-    { Icon: SiHuggingface, color: "text-[#FFD21E]", label: "HuggingFace", category: "nlp" },
     { Icon: BiBrain, color: "text-purple-500", label: "Neural Networks", category: "core" },
     { Icon: BiNetworkChart, color: "text-blue-500", label: "Deep Learning", category: "core" },
     { Icon: GiHealthNormal, color: "text-green-500", label: "Healthcare", category: "healthcare" },
