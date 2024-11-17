@@ -17,6 +17,9 @@ import Fireworks from './components/Fireworks';
 import PartyPopper from './components/PartyPopper';
 import ScrollArrows from './components/ScrollArrows';
 import IntroSection from './components/IntroSection';
+import StarBackground from './components/StarBackground';
+import Navigation from './components/Navigation';
+import Hobbies from './components/Hobbies';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -233,6 +236,8 @@ function App() {
 
         {/* Main Content */}
         <main className="relative">
+          <StarBackground />
+          <Navigation />
           {/* Welcome Section */}
           <section id="welcome" className="relative min-h-screen">
             <WelcomeSection />
@@ -256,6 +261,11 @@ function App() {
           {/* Projects Section */}
           <section id="projects" className="relative min-h-screen py-20">
             <Projects />
+          </section>
+
+          {/* Hobbies Section */}
+          <section className="relative min-h-screen py-20">
+            <Hobbies />
           </section>
 
           {/* Reviews Section */}
