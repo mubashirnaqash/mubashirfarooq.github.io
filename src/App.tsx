@@ -20,6 +20,7 @@ import Navigation from './components/Navigation';
 import Hobbies from './components/Hobbies';
 import CircularStarDecoration from './components/CircularStarDecoration';
 import ScrollArrows from './components/ScrollArrows';
+import RealStars from './components/RealStars';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -112,6 +113,24 @@ function App() {
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
       <div className="relative bg-white dark:bg-gray-900 transition-colors duration-300">
+        {/* Global background stars */}
+        <RealStars starCount={50} />
+        
+        {/* Additional star layers */}
+        <div className="absolute inset-0 z-0">
+          {/* Top section stars */}
+          <RealStars starCount={20} concentratedArea={{ x: '50%', y: '20%', radius: 300 }} />
+          
+          {/* Middle section stars */}
+          <RealStars starCount={20} concentratedArea={{ x: '30%', y: '50%', radius: 250 }} />
+          <RealStars starCount={20} concentratedArea={{ x: '70%', y: '50%', radius: 250 }} />
+          
+          {/* Bottom section stars */}
+          <RealStars starCount={20} concentratedArea={{ x: '50%', y: '80%', radius: 300 }} />
+        </div>
+
+        <StarBackground />
+        
         {/* Party Poppers */}
         <PartyPopper position="top-left" interval={2500} size="small" />
         <PartyPopper position="top-right" interval={3000} size="small" />
@@ -125,9 +144,7 @@ function App() {
         <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
         {/* Main Content */}
-        <div className="relative min-h-screen bg-white dark:bg-gray-900">
-          <StarBackground />
-          
+        <div className="relative min-h-screen">
           <main className="relative z-10">
             <Home />
             <About />

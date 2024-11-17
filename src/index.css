@@ -22,11 +22,11 @@
   }
 
   .heading {
-    @apply text-3xl md:text-4xl font-bold bg-gradient-to-r from-accent-peach via-accent-lavender to-accent-mint bg-clip-text text-transparent mb-4;
+    @apply text-3xl md:text-4xl font-bold bg-gradient-to-r from-gradient-start via-gradient-middle to-gradient-end bg-clip-text text-transparent mb-4;
   }
 
   .subheading {
-    @apply text-lg text-gray-600 dark:text-cream-200;
+    @apply text-lg text-cream-300 dark:text-cream-100;
   }
 
   /* Creamy Cards */
@@ -183,7 +183,7 @@
 
 /* Card Hover Effects */
 .hover-card {
-  @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-glow;
+  @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-glow-accent dark:hover:shadow-glow-cream;
 }
 
 /* Gradient Text */
@@ -207,13 +207,13 @@
 
 /* Image Shapes */
 .image-blob {
-  @apply rounded-blob overflow-hidden transform transition-all duration-700 hover:rounded-blob-2;
+  @apply rounded-blob overflow-hidden transform transition-all duration-700 hover:rounded-blob-2 hover:scale-105;
 }
 
 /* Container Shapes */
 .shape-container {
   @apply relative overflow-hidden rounded-3xl bg-cream-gradient dark:bg-gray-800 
-         shadow-cream dark:shadow-none hover:shadow-glow transition-all duration-300;
+         shadow-cream dark:shadow-none hover:shadow-glow-accent transition-all duration-300;
 }
 
 /* Decorative Elements */
