@@ -21,6 +21,8 @@ import StarBackground from './components/StarBackground';
 import Navigation from './components/Navigation';
 import Hobbies from './components/Hobbies';
 import SectionStars from './components/SectionStars';
+import CircleStars from './components/CircleStars';
+import CircularStarDecoration from './components/CircularStarDecoration';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -57,7 +59,7 @@ function App() {
         const sectionId = current.getAttribute('id');
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          if (['welcome', 'about', 'experience', 'projects', 'reviews', 'contact'].includes(sectionId || '')) {
+          if (['welcome', 'about', 'experience', 'projects', 'hobbies', 'reviews', 'contact'].includes(sectionId || '')) {
             setCurrentSection(sectionId || '');
           }
         }
@@ -88,6 +90,11 @@ function App() {
       id: 'projects',
       label: 'Projects',
       icon: <FaCode className="text-2xl group-hover:text-gradient-start" />
+    },
+    {
+      id: 'hobbies',
+      label: 'Hobbies',
+      icon: <FaComments className="text-2xl group-hover:text-gradient-start" />
     },
     {
       id: 'reviews',
@@ -241,7 +248,7 @@ function App() {
           <Navigation />
           {/* Welcome Section */}
           <section id="welcome" className="relative min-h-screen">
-            <SectionStars />
+            <CircularStarDecoration />
             <WelcomeSection />
           </section>
 
@@ -252,37 +259,37 @@ function App() {
 
           {/* About Section */}
           <section id="about" className="relative min-h-screen pt-16">
-            <SectionStars />
+            <CircularStarDecoration />
             <About />
           </section>
 
           {/* Experience Section */}
           <section id="experience" className="relative min-h-screen py-20">
-            <SectionStars />
+            <CircularStarDecoration />
             <Experience />
           </section>
 
           {/* Projects Section */}
           <section id="projects" className="relative min-h-screen py-20">
-            <SectionStars />
+            <CircularStarDecoration />
             <Projects />
           </section>
 
           {/* Hobbies Section */}
-          <section className="relative min-h-screen py-20">
-            <SectionStars />
+          <section id="hobbies" className="relative min-h-screen py-20">
+            <CircularStarDecoration />
             <Hobbies />
           </section>
 
           {/* Reviews Section */}
           <section id="reviews" className="relative min-h-screen py-20">
-            <SectionStars />
+            <CircularStarDecoration />
             <Reviews />
           </section>
 
           {/* Contact Section */}
           <section id="contact" className="relative min-h-screen py-20">
-            <SectionStars />
+            <CircularStarDecoration />
             <Contact />
           </section>
         </main>
