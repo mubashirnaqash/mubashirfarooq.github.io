@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         'orbitron': ['Orbitron', 'sans-serif'],
         'quicksand': ['Quicksand', 'sans-serif'],
+        'fancy': ['Poppins', 'sans-serif'],
       },
       colors: {
         cream: {
@@ -89,10 +90,11 @@ module.exports = {
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',
         'gradient-y': 'gradient-y 15s ease infinite',
-        'gradient-xy': 'gradient-xy 3s ease infinite',
+        'gradient-xy': 'gradient-xy 15s ease infinite',
+        'text-shimmer': 'text-shimmer 2.5s ease-in-out infinite',
         'spin-slow': 'spin 15s linear infinite',
         'spin-reverse-slow': 'spin-reverse 15s linear infinite',
-        'float': 'float 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
         'blob': 'blob 7s infinite',
         'bounce': 'bounce 1s infinite',
         'firework': 'firework 1s ease-out forwards',
@@ -141,6 +143,16 @@ module.exports = {
             'background-position': 'right center',
           },
         },
+        'text-shimmer': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': '0% center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': '100% center'
+          }
+        },
         'spin-reverse': {
           'to': {
             'transform': 'rotate(-360deg)'
@@ -148,7 +160,7 @@ module.exports = {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(-20px)' },
         },
         'blob': {
           '0%': {
@@ -181,7 +193,12 @@ module.exports = {
           },
         },
       },
-    },
+      dropShadow: {
+        'glow-white': '0 0 20px rgba(255, 255, 255, 0.35)',
+        'glow-purple': '0 0 20px rgba(147, 51, 234, 0.35)',
+        'glow-pink': '0 0 20px rgba(236, 72, 153, 0.35)',
+      }
+    }
   },
   plugins: [],
 }
