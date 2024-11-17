@@ -26,7 +26,8 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "./build.sh",
+    "winbuild": "build.cmd",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

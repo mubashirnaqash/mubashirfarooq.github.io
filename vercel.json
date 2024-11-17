@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "CI=false yarn build",
+  "buildCommand": "chmod +x build.sh && ./build.sh",
   "devCommand": "yarn start",
   "installCommand": "yarn install",
-  "framework": "create-react-app",
+  "framework": null,
   "outputDirectory": "build",
   "public": true
 }
