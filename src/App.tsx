@@ -3,25 +3,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { 
   FaUserAstronaut, FaUser, FaBriefcase, FaCode, 
-  FaComments, FaEnvelope, FaMoon, FaSun 
+  FaComments, FaEnvelope, FaChevronUp, FaChevronDown 
 } from 'react-icons/fa';
+
+import WelcomeSection from './components/WelcomeSection';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Reviews from './components/Reviews';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
-import AnalogClock from './components/AnalogClock';
-import WelcomeSection from './components/WelcomeSection';
-import Fireworks from './components/Fireworks';
-import PartyPopper from './components/PartyPopper';
-import ScrollArrows from './components/ScrollArrows';
+import Reviews from './components/Reviews';
 import IntroSection from './components/IntroSection';
+import PartyPopper from './components/PartyPopper';
+import Footer from './components/Footer';
 import StarBackground from './components/StarBackground';
 import Navigation from './components/Navigation';
 import Hobbies from './components/Hobbies';
-import SectionStars from './components/SectionStars';
-import CircleStars from './components/CircleStars';
 import CircularStarDecoration from './components/CircularStarDecoration';
 
 function App() {
@@ -118,14 +114,14 @@ function App() {
         <PartyPopper position="bottom-right" interval={3200} size="small" />
 
         {/* Fireworks */}
-        {showFireworks && <Fireworks />}
+        {showFireworks && <div />}
 
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex-shrink-0">
-                <AnalogClock />
+                <div />
               </div>
 
               {/* Mobile Menu Button */}
@@ -136,9 +132,9 @@ function App() {
                   className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300 mr-2"
                 >
                   {darkMode ? (
-                    <FaSun className="text-yellow-400 w-5 h-5" />
+                    <div />
                   ) : (
-                    <FaMoon className="text-gray-600 w-5 h-5" />
+                    <div />
                   )}
                 </button>
 
@@ -197,9 +193,9 @@ function App() {
                   className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
                 >
                   {darkMode ? (
-                    <FaSun className="text-yellow-400 w-6 h-6" />
+                    <div />
                   ) : (
-                    <FaMoon className="text-gray-600 w-6 h-6" />
+                    <div />
                   )}
                 </button>
               </div>
@@ -295,7 +291,7 @@ function App() {
         </main>
 
         {/* Background Effects */}
-        <ScrollArrows />
+        <div />
         <Footer />
       </div>
     </div>
