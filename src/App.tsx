@@ -20,6 +20,7 @@ import IntroSection from './components/IntroSection';
 import StarBackground from './components/StarBackground';
 import Navigation from './components/Navigation';
 import Hobbies from './components/Hobbies';
+import SectionStars from './components/SectionStars';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -240,6 +241,7 @@ function App() {
           <Navigation />
           {/* Welcome Section */}
           <section id="welcome" className="relative min-h-screen">
+            <SectionStars />
             <WelcomeSection />
           </section>
 
@@ -250,31 +252,37 @@ function App() {
 
           {/* About Section */}
           <section id="about" className="relative min-h-screen pt-16">
+            <SectionStars />
             <About />
           </section>
 
           {/* Experience Section */}
           <section id="experience" className="relative min-h-screen py-20">
+            <SectionStars />
             <Experience />
           </section>
 
           {/* Projects Section */}
           <section id="projects" className="relative min-h-screen py-20">
+            <SectionStars />
             <Projects />
           </section>
 
           {/* Hobbies Section */}
           <section className="relative min-h-screen py-20">
+            <SectionStars />
             <Hobbies />
           </section>
 
           {/* Reviews Section */}
           <section id="reviews" className="relative min-h-screen py-20">
+            <SectionStars />
             <Reviews />
           </section>
 
           {/* Contact Section */}
           <section id="contact" className="relative min-h-screen py-20">
+            <SectionStars />
             <Contact />
           </section>
         </main>

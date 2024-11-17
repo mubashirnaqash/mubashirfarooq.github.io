@@ -3,12 +3,11 @@ import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { 
   FaHome, FaUser, FaBriefcase, FaCode, 
-  FaEnvelope, FaStar, FaHeart 
+  FaEnvelope, FaStar, FaHeart, FaClock 
 } from 'react-icons/fa';
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('welcome');
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const navItems = [
     { id: 'welcome', label: 'Home', icon: FaHome },
@@ -18,19 +17,8 @@ const Navigation = () => {
     { id: 'hobbies', label: 'Hobbies', icon: FaHeart },
     { id: 'reviews', label: 'Reviews', icon: FaStar },
     { id: 'contact', label: 'Contact', icon: FaEnvelope },
+    { id: 'clock', label: 'Time', icon: FaClock },
   ];
-
-  const getItemColor = (id: string) => {
-    if (activeSection === id) return 'text-orange-500';
-    if (hoveredItem === id) return 'text-purple-400';
-    return 'text-gray-400';
-  };
-
-  const getBackgroundColor = (id: string) => {
-    if (activeSection === id) return 'bg-orange-500/20';
-    if (hoveredItem === id) return 'bg-purple-500/20';
-    return '';
-  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md shadow-lg">
@@ -47,47 +35,45 @@ const Navigation = () => {
                   duration={500}
                   onSetActive={() => setActiveSection(id)}
                   className="relative px-4 py-2 flex items-center space-x-2 cursor-pointer group"
-                  onMouseEnter={() => setHoveredItem(id)}
-                  onMouseLeave={() => setHoveredItem(null)}
                 >
                   {/* Background Highlight */}
                   <motion.div
-                    className={`absolute inset-0 rounded-lg ${getBackgroundColor(id)}`}
+                    className={`absolute inset-0 rounded-lg transition-colors duration-300
+                      ${activeSection === id ? 'bg-orange-500/20' : 'group-hover:bg-purple-500/20'}`}
                     layoutId="navBackground"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
 
                   {/* Icon */}
                   <Icon 
-                    className={`w-5 h-5 transition-all duration-300 ${getItemColor(id)}`}
+                    className={`w-5 h-5 transition-colors duration-300
+                      ${activeSection === id 
+                        ? 'text-orange-500' 
+                        : 'text-gray-400 group-hover:text-orange-400'}`}
                   />
 
                   {/* Label */}
                   <span 
-                    className={`relative transition-all duration-300 ${getItemColor(id)}
-                      ${activeSection === id ? 'font-semibold scale-105' : ''}
-                      ${hoveredItem === id ? 'font-medium scale-105' : ''}`}
+                    className={`relative transition-colors duration-300
+                      ${activeSection === id 
+                        ? 'text-orange-500 font-semibold' 
+                        : 'text-gray-400 group-hover:text-orange-400'}`}
                   >
                     {label}
                   </span>
 
                   {/* Hover Glow Effect */}
-                  {hoveredItem === id && (
-                    <motion.div
-                      className="absolute inset-0 rounded-lg opacity-75
-                        bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20 blur-sm"
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ 
-                        opacity: [0.5, 0.8, 0.5],
-                        scale: [0.95, 1.05, 0.95]
-                      }}
-                      transition={{ 
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    />
-                  )}
+                  <motion.div
+                    className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100
+                      bg-gradient-to-r from-orange-500/20 to-purple-500/20 blur"
+                    initial={false}
+                    animate={{ scale: [0.95, 1.05, 0.95] }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </Link>
               </li>
             ))}
