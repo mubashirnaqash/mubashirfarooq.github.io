@@ -1,9 +1,18 @@
 {
   "version": 2,
   "buildCommand": "chmod +x build.sh && ./build.sh",
-  "devCommand": "yarn start",
   "installCommand": "yarn install",
   "framework": null,
   "outputDirectory": "build",
-  "public": true
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "alias": ["mubashirfarooq.vercel.app"],
+  "redirects": [
+    {
+      "source": "https://mubashirfarooq-github-rha2pwlzw-mubashirnaqashs-projects.vercel.app/*",
+      "destination": "https://mubashirfarooq.vercel.app/:splat",
+      "permanent": true
+    }
+  ]
 }
