@@ -39,30 +39,33 @@ const WelcomeSection = () => {
 
         {/* Right Side - Text Content */}
         <motion.div 
-          className="w-2/3 pl-12 space-y-6"
+          className="w-2/3 pl-12 flex flex-col items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {/* Welcome Text with Gradient and Glow */}
-          <motion.h1
+          {/* Welcome Text with Rotating Glow */}
+          <motion.div
+            className="relative mb-6 w-full text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-7xl font-bold font-fancy"
           >
-            <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent
-              animate-gradient-x filter drop-shadow-[0_0_15px_rgba(236,72,153,0.3)]">
-              Welcome to World of AI
-            </span>
-          </motion.h1>
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg opacity-50 blur-lg animate-spin-slow"></div>
+            <h1 className="relative text-6xl md:text-8xl font-bold font-fancy tracking-wider">
+              <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent
+                animate-gradient-x">
+                World of AI
+              </span>
+            </h1>
+          </motion.div>
 
           {/* Name with Slide Effect */}
           <motion.h2
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-4xl md:text-6xl font-bold text-white font-fancy
+            className="text-3xl md:text-5xl font-bold text-white font-fancy mb-4
               filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
           >
             I'm Mubashir Farooq
@@ -73,7 +76,7 @@ const WelcomeSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-2xl md:text-4xl text-gray-300 font-fancy
+            className="text-xl md:text-3xl text-gray-300 font-fancy
               bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent
               transform hover:scale-105 transition-transform duration-300"
           >
