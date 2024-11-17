@@ -24,7 +24,7 @@ const WelcomeSection = () => {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="w-1/3 relative"
+          className="w-[450px] relative flex-shrink-0"
         >
           <div className="relative group">
             {/* Glow Effect */}
@@ -39,22 +39,27 @@ const WelcomeSection = () => {
 
         {/* Right Side - Text Content */}
         <motion.div 
-          className="w-2/3 pl-12 flex flex-col items-center"
+          className="flex-1 pl-16 flex flex-col items-center space-y-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {/* Welcome Text with Rotating Glow */}
           <motion.div
-            className="relative mb-6 w-full text-center"
+            className="relative mb-2 w-full text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg opacity-50 blur-lg animate-spin-slow"></div>
-            <h1 className="relative text-6xl md:text-8xl font-bold font-fancy tracking-wider">
+            <h1 className="relative text-5xl md:text-7xl font-bold font-fancy tracking-wider">
               <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent
                 animate-gradient-x">
+                Welcome to
+              </span>
+              <br />
+              <span className="text-6xl md:text-8xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent
+                animate-gradient-x mt-2 inline-block">
                 World of AI
               </span>
             </h1>
@@ -65,7 +70,7 @@ const WelcomeSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-3xl md:text-5xl font-bold text-white font-fancy mb-4
+            className="text-3xl md:text-5xl font-bold text-white font-fancy
               filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
           >
             I'm Mubashir Farooq

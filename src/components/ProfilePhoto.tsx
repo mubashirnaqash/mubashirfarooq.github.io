@@ -35,7 +35,7 @@ const ProfilePhoto = () => {
 
       {/* Main Photo Container */}
       <motion.div
-        className="relative w-[300px] h-[350px] rounded-full overflow-hidden border-4 border-purple-500/30
+        className="relative w-[400px] h-[400px] rounded-full overflow-hidden border-4 border-purple-500/30
           transform group-hover:scale-105 transition-transform duration-300"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -48,7 +48,7 @@ const ProfilePhoto = () => {
         <img
           src={profilePhotoUrl}
           alt="Mubashir Naqash"
-          className="w-full h-full object-cover object-center transform scale-110"
+          className="w-full h-full object-cover object-top transform scale-125"
         />
 
         {/* Hover Overlay */}
