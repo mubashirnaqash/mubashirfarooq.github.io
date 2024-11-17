@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "buildCommand": "yarn install && yarn build",
+  "installCommand": "yarn install",
+  "framework": "create-react-app",
+  "outputDirectory": "build",
   "builds": [
     {
       "src": "package.json",
