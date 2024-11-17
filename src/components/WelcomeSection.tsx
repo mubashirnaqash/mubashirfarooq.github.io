@@ -18,13 +18,13 @@ const WelcomeSection = () => {
       <HeadlineStars />
 
       {/* Main Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
         {/* Left Side - Photo */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="w-[450px] relative flex-shrink-0"
+          className="w-[250px] sm:w-[300px] md:w-[450px] relative flex-shrink-0"
         >
           <div className="relative group">
             {/* Glow Effect */}
@@ -39,27 +39,25 @@ const WelcomeSection = () => {
 
         {/* Right Side - Text Content */}
         <motion.div 
-          className="flex-1 pl-16 flex flex-col items-center space-y-4"
+          className="flex-1 md:pl-16 flex flex-col items-center md:items-start space-y-3 md:space-y-4 text-center md:text-left"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {/* Welcome Text with Rotating Glow */}
           <motion.div
-            className="relative mb-2 w-full text-center"
+            className="relative mb-2 w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg opacity-50 blur-lg animate-spin-slow"></div>
-            <h1 className="relative text-5xl md:text-7xl font-bold font-fancy tracking-wider">
-              <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent
-                animate-gradient-x">
+            <h1 className="relative text-3xl sm:text-4xl md:text-7xl font-bold font-fancy tracking-wider">
+              <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient-x">
                 Welcome to
               </span>
               <br />
-              <span className="text-6xl md:text-8xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent
-                animate-gradient-x mt-2 inline-block">
+              <span className="text-4xl sm:text-5xl md:text-8xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-gradient-x mt-2 inline-block">
                 World of AI
               </span>
             </h1>
@@ -70,8 +68,7 @@ const WelcomeSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-3xl md:text-5xl font-bold text-white font-fancy
-              filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+            className="text-xl sm:text-2xl md:text-5xl font-bold text-white font-fancy filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
           >
             I'm Mubashir Farooq
           </motion.h2>
@@ -81,9 +78,7 @@ const WelcomeSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-xl md:text-3xl text-gray-300 font-fancy
-              bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent
-              transform hover:scale-105 transition-transform duration-300"
+            className="text-base sm:text-lg md:text-3xl text-gray-300 font-fancy bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent transform hover:scale-105 transition-transform duration-300"
           >
             Transforming Ideas into Intelligent Solutions
           </motion.h3>
@@ -110,7 +105,7 @@ const WelcomeSection = () => {
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="text-white hover:text-pink-500 transition-colors duration-300"
           >
-            <FaChevronDown className="text-3xl" />
+            <FaChevronDown className="text-2xl md:text-3xl" />
           </motion.div>
         </Link>
       </motion.div>

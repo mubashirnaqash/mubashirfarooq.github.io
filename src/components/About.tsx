@@ -1350,9 +1350,27 @@ const About = () => {
                 <h3 className="text-xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
                   Technologies & Tools
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   {technologies.map((tech, index) => (
-                    <TechCard key={index} tech={tech} index={index} />
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="p-3 md:p-4 rounded-xl bg-cream-50 dark:bg-gray-700 hover:bg-gradient-to-r hover:from-pink-500/10 hover:to-indigo-500/10 transition-colors duration-300 group"
+                    >
+                      <div className="flex items-center space-x-2 md:space-x-3">
+                        <div className={`text-xl md:text-2xl ${tech.color} group-hover:scale-110 transition-transform duration-300`}>
+                          {tech.icon}
+                        </div>
+                        <span className="text-sm md:text-base font-medium text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-indigo-500 group-hover:bg-clip-text transition-colors duration-300">
+                          {tech.name}
+                        </span>
+                      </div>
+                      <p className="mt-2 text-xs md:text-sm text-gray-500 dark:text-gray-400">
+                        {tech.description}
+                      </p>
+                    </motion.div>
                   ))}
                 </div>
               </div>

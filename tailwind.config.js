@@ -37,28 +37,9 @@ module.exports = {
           900: '#3F92FF',
         },
         accent: {
-          peach: {
-            light: '#FFB4A1',
-            DEFAULT: '#FF8C73',
-            dark: '#FF6347',
-          },
-          mint: {
-            light: '#7FFFD4',
-            DEFAULT: '#48D1CC',
-            dark: '#20B2AA',
-          },
-          lavender: {
-            light: '#E6E6FA',
-            DEFAULT: '#DCD0FF',
-            dark: '#B19CD9',
-          },
-          coral: {
-            light: '#FFB6C1',
-            DEFAULT: '#FF7F87',
-            dark: '#FF6B6B',
-          },
-          peach: '#FFB4A2',
-          mint: '#A5FFD6',
+          peach: '#FF6B6B',
+          mint: '#4FD1C5',
+          lavender: '#9F7AEA'
         },
         gradient: {
           start: '#FFB4A1',
@@ -100,6 +81,7 @@ module.exports = {
         'sparkle': 'sparkle 2s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'glow': 'glow 2s ease-in-out infinite',
       },
       keyframes: {
         'gradient-x': {
@@ -204,6 +186,17 @@ module.exports = {
             transform: 'scale(1.2)',
           },
         },
+        glow: {
+          '0%, 100%': {
+            textShadow: '0 0 5px rgba(139, 92, 246, 0.5), 0 0 10px rgba(139, 92, 246, 0.3)',
+          },
+          '50%': {
+            textShadow: '0 0 10px rgba(139, 92, 246, 0.8), 0 0 20px rgba(139, 92, 246, 0.5), 0 0 30px rgba(139, 92, 246, 0.3)',
+          },
+        },
+      },
+      textShadow: {
+        'glow': '0 0 10px rgba(139, 92, 246, 0.8), 0 0 20px rgba(139, 92, 246, 0.5), 0 0 30px rgba(139, 92, 246, 0.3)',
       },
       dropShadow: {
         'glow-white': '0 0 20px rgba(255, 255, 255, 0.35)',
